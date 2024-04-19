@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 const Profileproduct = ({
+  key,
   productImage,
   category,
   productname,

@@ -2,7 +2,7 @@
 import Profileproduct from "@/components/Profileproduct";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
-const page = () => {
+const Page = () => {
   const { data: session } = useSession();
   const [products, setproducts] = useState([]);
   useEffect(() => {
@@ -61,6 +61,7 @@ const page = () => {
           products.map((item) => {
             return (
             <Profileproduct
+              key={item._id}
               productImage={item.productimage}
               category={item.category}
               productname={item.productname}
@@ -75,4 +76,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

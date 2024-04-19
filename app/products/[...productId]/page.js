@@ -23,7 +23,7 @@ const ProductDisplay = ({ params }) => {
       }
     };
     handleproduct();
-  }, []);
+  }, [Productid]);
 
   return (
     <div className="min-h-[100vh]">
@@ -33,9 +33,11 @@ const ProductDisplay = ({ params }) => {
             <div className="flex flex-col md:flex-row -mx-4  justify-center items-center">
               <div className="md:flex-1 px-4">
                 <div className="md:h-[75vh] rounded-lg bg-gray-700 dark:bg-gray-700 mb-4">
-                  <img
+                  <Image                   
                     className="w-full h-full object-fill rounded-lg"
                     src={singleProduct.productimage}
+                    width={400}
+                    height={600}
                     alt="Product Image"
                   />
                 </div>
@@ -72,7 +74,7 @@ const ProductDisplay = ({ params }) => {
                 <div class=" mb-4">
                   <div class="bg-yellow-200  py-4 pl-4 md:pl-5 shadow-md rounded-md flex flex-col gap-1">
                     <p class="text-gray-600 text-sm md:text-base">
-                      &#10004; Let's keep our community friendly!
+                      &#10004; Let&apos;  s keep our community friendly!
                     </p>
                     <p class="text-gray-600 text-sm md:text-base">
                       &#10004; Always communicate with respect and courtesy.
@@ -92,6 +94,7 @@ const ProductDisplay = ({ params }) => {
                     >
                       <Image
                         src={instagram}
+                        alt="icon"
                         width={25}
                         height={25}
                         className="mr-3"
@@ -105,6 +108,7 @@ const ProductDisplay = ({ params }) => {
                     >
                       <Image
                         src={instagram}
+                        alt="icon"
                         width={25}
                         height={25}
                         className="mr-3"

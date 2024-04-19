@@ -18,7 +18,7 @@ const Buy = () => {
         console.log("Failed to fetch the products");
       }
     };
-    if (!searchText) handleproduct();
+    handleproduct();
   }, []);
 
   const filteredProducts = (searchtext) => {

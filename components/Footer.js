@@ -25,11 +25,11 @@ const Footer = () => {
         {/* FOOTER LINK  */}
         {FooterLinks.map((item) => {
           return (
-            <div className="flex-col space-y-2 items-center justify-center text-center">
+            <div key={item.title} className="flex-col space-y-2 items-center justify-center text-center">
               <div className="text-base ">{item.title}</div>
               {item.links.map((link) => {
                 return (
-                  <div className="text-gray-500 text-sm mt-1 md:text-base hover:text-black">
+                  <div key={link.url} className="text-gray-500 text-sm mt-1 md:text-base hover:text-black">
                     <Link href={link.url}>{link.title} </Link>
                   </div>
                 );
