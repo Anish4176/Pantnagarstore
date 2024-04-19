@@ -26,15 +26,15 @@ const Header = () => {
     setisSidebarOpen(!isSidebarOpen);
   };
   return (
-    <div className=" w-full overflow-x-hidden   bg-violet-700 flex justify-around   items-center ">
+    <div className=" w-full overflow-x-hidden   bg-violet-700 flex justify-around   items-center py-6 ">
       <div>
         <Link href="/">
-        <Image src={logo5} className="" alt="logo" width={210} height={140} />
+        <Image src={logo5} className="" alt="logo" width={250} height={140} />
         </Link>
       </div>
 
       {/* Desktop Header */}
-      <div className="hidden md:flex text-white text-lg font-normal ">
+      <div className="hidden lg:flex text-white text-lg font-normal ">
         <div className="flex justify-center items-center space-x-3">
           <ul className=" flex lg:space-x-7 space-x-5 justify-center items-center pr-5 cursor-pointer">
             <li className="hover:scale-105">
@@ -83,7 +83,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Header */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Image
           className="cursor-pointer "
           onClick={toggleSidebar}
