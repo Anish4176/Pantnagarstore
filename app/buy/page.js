@@ -53,7 +53,7 @@ const Buy = () => {
             value={searchText}
             onChange={handleSearch}
             placeholder="Search Any Product or Category"
-            className="md:px-10 px-8 py-2  w-full rounded-md flex-1 outline-none bg-white"
+            className="md:px-10 pl-8 py-2  w-full rounded-md flex-1 outline-none bg-white"
           />
           <div class="absolute left-0 inset-y-0 flex items-center ">
             <svg
