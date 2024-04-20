@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 const Profileproduct = ({
-  key,
   productImage,
   category,
   productname,
@@ -16,7 +15,7 @@ const Profileproduct = ({
   const pathname = usePathname();
  
   return (
-    <div className="w-72  bg-white shadow-md rounded-xl  hover:shadow-xl">
+    <div className="w-full  bg-white shadow-md rounded-xl  hover:shadow-xl">
       <div>
         <Image
           src={productImage}
@@ -24,9 +23,9 @@ const Profileproduct = ({
           objectFit="cover"
           width={200}
           height={200}
-          className="h-64 w-72 object-cover rounded-t-xl"
+          className="md:h-64 w-[100%] h-52 object-cover rounded-t-md"
         />
-        <div className="px-4 py-3 w-72">
+        <div className="px-4 py-3 w-full">
           <span className="text-gray-400 mr-3 uppercase text-xs">
             {category}
           </span>
@@ -41,7 +40,7 @@ const Profileproduct = ({
           </div>
         </div>
         {session?.user?.id === sellarId && pathname == "/profile" && (
-          <div className="flex w-[100%] justify-center items-center ">
+          <div className="flex w-full justify-center items-center ">
             <p
               onClick={handleDelete}
               className="cursor-pointer text-lg font-semibold text-red-500 text-center  my-3"
