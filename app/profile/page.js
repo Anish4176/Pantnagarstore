@@ -57,7 +57,7 @@ const Page = () => {
       </div>
       <div className="w-[100%] flex flex-wrap justify-center items-center gap-x-10 mt-7 gap-y-5">
         {products
-          ? products.map((item) => {
+          ? (products.map((item) => {
               <Profileproduct
                 key={item._id}
                 productImage={item.productimage}
@@ -68,15 +68,15 @@ const Page = () => {
                 productId={item._id}
                 handleDelete={() => handleDelete(item._id)}
               />;
-            })
-          : Array.from({ length: 9 }, (_, i) => (
+            }))
+          :( Array.from({ length: 9 }, (_, i) => (
               <div
                 className="w-1/2 md:w-1/3 lg:w-1/4  px-1 md:px-2 flex items-center justify-center"
                 key={i}
               >
                 <Loader />
               </div>
-            ))}
+            )))}
       </div>
     </div>
   );
