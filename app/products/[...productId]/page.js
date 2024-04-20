@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import instagram from "@/public/instagram.svg";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Loader from "@/components/Loader";
+import SingleproductLoader from "@/components/SingleproductLoader";
 //TODO: USE a box so that a user should behave nicely and other etiquettes
 const ProductDisplay = ({ params }) => {
   const router = useRouter();
@@ -130,7 +132,9 @@ const ProductDisplay = ({ params }) => {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div>
+          <SingleproductLoader/>
+        </div>
       )}
     </div>
   );

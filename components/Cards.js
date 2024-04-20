@@ -4,6 +4,7 @@ import Card from "./Card";
 import Link from "next/link";
 import arrow from "@/public/arrow.svg";
 import Image from "next/image";
+import Loader from "./Loader";
 
 const Cards = () => {
   const [totalproducts, settotalproducts] = useState(null);
@@ -51,9 +52,18 @@ const Cards = () => {
               />
               </div>
             );
-          })) :(
-            <p>Loading Products...</p>
-          )
+          })) :
+            
+              (
+                Array.from({length: 8}, (_, i) => (
+                  <div className="w-1/2 md:w-1/3 lg:w-1/4  px-1 md:px-2 flex items-center justify-center" key={i}>
+                  <Loader/>
+                  </div>
+                ))
+              )
+           
+            
+          
         }
       </div>
       <div className="w-full">

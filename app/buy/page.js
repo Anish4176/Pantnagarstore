@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Card from "@/components/Card";
+import Loader from "@/components/Loader";
 
 const Buy = () => {
   const [searchText, setsearchText] = useState("");
@@ -104,7 +105,11 @@ const Buy = () => {
               </div>
             ))
           ) : (
-            <p>Loading Products...</p>
+            Array.from({length: 9}, (_, i) => (
+              <div className="w-1/2 md:w-1/3 lg:w-1/4  px-1 md:px-2 flex items-center justify-center" key={i}>
+              <Loader/>
+              </div>
+            ))
           )}
         </div>
       </div>

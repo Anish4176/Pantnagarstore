@@ -16,7 +16,7 @@ const Card = ({productId,productname,category,productCondition,sellar,tag,price,
   }
 
   return (
-    <div onClick={handleProductClick} className="cursor-pointer   bg-white shadow-md rounded-md duration-500 md:hover:scale-105 hover:shadow-xl">
+    <div onClick={handleProductClick} className="cursor-pointer w-full   bg-white shadow-md rounded-md duration-500 md:hover:scale-105 hover:shadow-xl">
       <div >
         <Image
           src={productImage}
