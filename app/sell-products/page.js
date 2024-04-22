@@ -284,7 +284,7 @@ const Sell = () => {
                     >
                       <span>Drag and drop</span>
                       <span className="text-indigo-600 "> or browse </span>
-                      <span>to upload</span>
+                      <span>image to upload</span>
                     </label>
                   </h3>
                   <p className="mt-1 text-xs text-gray-500">

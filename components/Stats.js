@@ -9,13 +9,15 @@ const Stats = () => {
       try{
         const response = await fetch("/api/cards");     //fetching details of cards(products)
         const data = await response.json();
+        // console.log('e', data)
         settotalproducts(data); 
         const user1 = await fetch("/api/user");     //fetching details of cards(products)
         const userdata = await user1.json();
+        // console.log('e', userdata)
         setuser(userdata);
-
+         
       }catch(e){
-        console.log("Failed to fetch the products");
+        console.log("Failed to fetch the stats");
       }   
     };
     handleproduct();

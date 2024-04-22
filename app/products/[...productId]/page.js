@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import instagram from "@/public/instagram.svg";
+import email from "@/public/email.svg";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Loader from "@/components/Loader";
@@ -95,7 +96,7 @@ const ProductDisplay = ({ params }) => {
                       className="hover:shadow-form w-[100%] flex justify-center items-center rounded-md  hover:bg-[#6e38c4]  bg-[#6c28d9e8] py-3 px-8 text-center text-lg  font-sans tracking-wide text-white outline-none"
                     >
                       <Image
-                        src={instagram}
+                        src={email}
                         alt="icon"
                         width={25}
                         height={25}

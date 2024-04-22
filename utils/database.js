@@ -11,6 +11,8 @@ export async function ConnectToDatabase(){
             dbName:"Pantnagar_Market",
             useNewUrlParser:true,
             useUnifiedTopology:true
+
+
         })
         isConnected = true;
         console.log('Mongodb is connected')

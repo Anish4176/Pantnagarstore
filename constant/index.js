@@ -12,26 +12,27 @@ export const FooterLinks=[
 
         ]
     },{
-        title:'ABOUT',
+        title:'Links',
         links:[
             {
-                title:"Contact Us",
-                url:"/contact"
+                title:"Home",
+                url:"/"
+                
             },{
-                title:"About Us",
-                url:"/about"
+                title:"Products",
+                url:"/buy"
             }
 
         ]
     },{
-        title:'SOCIAL',
+        title:'Meet the Developer',
         links:[
             {
-                title:"Facebook",
-                url:"/"
+                title:"LinkedIn",
+                url:"https://www.linkedin.com/in/anish-webdev"
             },{
                 title:"Instagram",
-                url:"/"
+                url:"https://instagram.com/anishsingh443"
             }
 
         ]
