@@ -9,10 +9,6 @@ export async function ConnectToDatabase(){
     try{
         await mongoose.connect(process.env.MONGODB_URI,{
             dbName:"Pantnagar_Market",
-            useNewUrlParser:true,
-            useUnifiedTopology:true
-
-
         })
         isConnected = true;
         console.log('Mongodb is connected')

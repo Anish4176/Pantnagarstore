@@ -21,7 +21,6 @@ const Card = ({productId,productname,category,productCondition,sellar,tag,price,
         <Image
           src={productImage}
           alt="Product"
-          objectFit="cover"
           width={200}
           height={200}
           className="md:h-64 w-[100%] h-52 object-cover rounded-t-md"
