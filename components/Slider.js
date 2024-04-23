@@ -30,7 +30,7 @@ const Slider = () => {
           </Link>
         </div>
         <div className="hidden lg:flex">
-          <Image src={hero} alt="hero" />
+          <Image src={hero} alt="hero" priority />
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ const Header = () => {
     <div className=" w-full overflow-x-hidden   bg-violet-700 flex justify-around   items-center py-6 ">
       <div>
         <Link href="/">
-        <Image src={logo5} className="" alt="logo" width={250} height={140} />
+        <Image src={logo5} className="w-full h-auto" alt="logo"  width={200} height={200} />
         </Link>
       </div>
 
@@ -85,12 +85,12 @@ const Header = () => {
       {/* Mobile Header */}
       <div className="lg:hidden">
         <Image
-          className="cursor-pointer "
+          className="cursor-pointer  h-auto"
           onClick={toggleSidebar}
           src={hamburger}
           alt="menu"
           width={35}
-          height={40}
+          
           
         />
       </div>
