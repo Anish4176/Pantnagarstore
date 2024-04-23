@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
 import form from "@/public/form.svg";
+import spinner from "@/public/spinner.svg";
 
 const Sell = () => {
   const router = useRouter();
@@ -70,7 +71,6 @@ const Sell = () => {
     e.preventDefault();
     setsubmitting(true);
     try {
-
       const imageUrl = await uploadImage(product_details.productimage); //getting image url of product from cloudinary
       if (!imageUrl.url) {
         return;
@@ -357,7 +357,20 @@ const Sell = () => {
                 type="submit"
                 className="hover:shadow-form w-full rounded-md bg-[#6D28D9] py-3 px-8 text-center text-lg  font-medium text-white outline-none"
               >
-                {submitting ? "Publishing..." : "Publish Product"}
+                {submitting ? (
+                  <div> 
+                  <Image
+                    src={spinner}
+                    alt="Publishing..."
+                    className="mx-auto "
+                    width={28}
+                    heigth={28}
+                    
+                  />
+                </div>
+                ) : (
+                  "Publish Product"
+                )}
               </button>
             </div>
           </form>

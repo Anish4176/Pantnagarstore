@@ -13,7 +13,7 @@ const Stats = () => {
         settotalproducts(data); 
         const user1 = await fetch("/api/user");     //fetching details of cards(products)
         const userdata = await user1.json();
-        // console.log('e', userdata)
+        console.log('e', userdata)
         setuser(userdata);
          
       }catch(e){
