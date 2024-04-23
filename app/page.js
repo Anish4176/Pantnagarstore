@@ -5,7 +5,9 @@ import Slider from "@/components/Slider";
 import Stats from "@/components/Stats";
 import WorkFlow from "@/components/WorkFlow";
 
+
 export default function Home() {
+  
   return(
     <>
     <div>  

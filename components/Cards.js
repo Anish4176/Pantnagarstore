@@ -5,6 +5,7 @@
   import arrow from "@/public/arrow.svg";
   import Image from "next/image";
   import Loader from "./Loader";
+  
 
   const Cards = () => {
     const [totalproducts, settotalproducts] = useState(null);
@@ -16,6 +17,7 @@
             throw new Error('Network response was not ok');
           }
           const data = await response.json();  
+          
           settotalproducts(data);
 
         }catch(e){

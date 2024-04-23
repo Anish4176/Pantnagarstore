@@ -6,6 +6,7 @@ import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
 import form from "@/public/form.svg";
 import spinner from "@/public/spinner.svg";
+import { toast } from 'react-toastify';
 
 const Sell = () => {
   const router = useRouter();
@@ -94,8 +95,31 @@ const Sell = () => {
             instagramHandle: product_details.instagramHandle,
           }),
         });
+        if(!response.ok){
+          toast.error('Something went wrong!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            });
+        }
 
         if (response.ok) {
+          toast.success('Product Published successfully!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
           router.push("/");
         }
       }

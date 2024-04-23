@@ -1,4 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
+import {ToastContainer} from "@/components/Toast";
+import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
 import NextAuthProvider from "@/components/Provider";
 import Header from "@/components/Header";
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
       <NextAuthProvider>             
        <Header/>
         {children}
+        <ToastContainer/>
         <Analytics />
         <Footer/>     
       </NextAuthProvider>
