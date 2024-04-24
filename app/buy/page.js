@@ -12,7 +12,7 @@ const Buy = () => {
   useEffect(() => {
     const handleproduct = async () => {
       try {
-        const response = await fetch("/api/cards"); // Fetching details of cards (products)
+        const response = await fetch("/api/cards"); // Fetching details of cards products
         const data = await response.json();
         settotalproducts(data);
       } catch (e) {
