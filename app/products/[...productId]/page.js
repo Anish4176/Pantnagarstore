@@ -104,7 +104,7 @@ const ProductDisplay = ({ params }) => {
                       />
                       Email the Seller
                     </Link>
-                    <Link
+                    {singleProduct.instagramHandle ? ( <Link
                       target="_blank"
                       href={`${singleProduct.instagramHandle}`}
                       className="hover:shadow-form flex justify-center items-center rounded-md   bg-instagram-pattern py-3 px-8 text-center w-[100%] text-lg  font-sans tracking-wide text-white outline-none"
@@ -117,7 +117,7 @@ const ProductDisplay = ({ params }) => {
                         className="mr-3"
                       />
                       Contact on Instagram
-                    </Link>
+                    </Link>):("")}
                   </div>
                 </div>
               </div>
