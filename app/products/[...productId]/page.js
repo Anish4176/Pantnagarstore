@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Loader from "@/components/Loader";
 import SingleproductLoader from "@/components/SingleproductLoader";
-//TODO: USE a box so that a user should behave nicely and other etiquettes
+
 const ProductDisplay = ({ params }) => {
   const router = useRouter();
   const [singleProduct, setsingleProduct] = useState(null);

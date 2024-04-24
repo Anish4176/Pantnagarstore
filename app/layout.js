@@ -6,6 +6,7 @@ import NextAuthProvider from "@/components/Provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Lexend } from 'next/font/google';
+import Home from "@/public/home.png"
 
 const poppins = Lexend({
   subsets: ['latin'],
@@ -13,8 +14,14 @@ const poppins = Lexend({
 });
 
 export const metadata = {
-  title: "PantnagarStore",
+  title: "Pantnagarstore",
   description: "PantnagarStore is your go-to marketplace for buying and selling new and used textbooks, bicycles, kitchen appliances, sports gear, fashion, and room essentials. Save and earn by connecting with Pantnagar students today!",
+  other:{
+    "og:url": "http://pantnagarstore.com",
+    "og:type": "website",
+    "og:title": "PantnagarStore",
+    "og:image": {Home},
+  }
 };
 
 

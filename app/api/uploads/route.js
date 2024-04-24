@@ -20,8 +20,9 @@ export async function POST(req){
             unique_filename: false,
             overwrite: true,
             transformation:[
-                {width: 1000, height: 752, crop: 'scale'}
+                {width: 5000, height: 5000, crop: "limit", format: "auto", quality: "auto"}
             ]
+
           };
         const result = await cloudinary.uploader.upload(path, options);
         return NextResponse.json(result, {status: 200});
