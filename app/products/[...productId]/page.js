@@ -117,7 +117,9 @@ const ProductDisplay = ({ params }) => {
                         className="mr-3"
                       />
                       Contact on Instagram
-                    </Link>):("")}
+                    </Link>):(
+                      <div></div>
+                    )}
                   </div>
                 </div>
               </div>
