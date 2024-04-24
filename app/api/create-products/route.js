@@ -11,7 +11,7 @@ export async function POST(req, res) {
       productname: data.productname.trim(),
       category: data.category,
       price:data.price.trim(),
-      tag: data.tag.trim(),
+      // tag: data.tag.trim(),
       condition: data.condition,
       productimage: data.productimage,
       description:data.description.trim(),

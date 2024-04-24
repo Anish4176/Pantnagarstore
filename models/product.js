@@ -16,10 +16,10 @@ const ProductSchema = new Schema({
     type: Number,
     required: [true, "Price is required"],
   },
-  tag: {
-    type: String,
-    required: [true, "Tag is required"],
-  },
+  // tag: {
+  //   type: String,
+  //   required: [true, "Tag is required"],
+  // },
   condition: {
     type: String,
     required: [true, "Product Condition is required"],
@@ -33,7 +33,7 @@ const ProductSchema = new Schema({
   },
   instagramHandle: {
     type: String,
-    required: [true, "Instagram Handle is required"],
+    
   },
 });
 const Product = models.Product || model("Product", ProductSchema);

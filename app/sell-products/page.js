@@ -23,7 +23,7 @@ const Sell = () => {
     productname: "",
     category: "",
     price: "",
-    tag: "",
+    // tag: "",
     condition: "",
     productimage: "",
     description: "",
@@ -88,7 +88,7 @@ const Sell = () => {
             sellarId: product_details.sellarId,
             category: product_details.category,
             price: product_details.price,
-            tag: product_details.tag,
+            // tag: product_details.tag,
             condition: product_details.condition,
             productimage: imageUrl.url,
             description: product_details.description,
@@ -167,7 +167,7 @@ const Sell = () => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
               />
             </div>
-            {/* TODO: required in every input  */}
+            
             {/* product category  */}
             <div className="mb-5">
               <label
@@ -232,7 +232,7 @@ const Sell = () => {
               />
             </div>
             {/* product tag */}
-            <div className="mb-5">
+            {/* <div className="mb-5">
               <label
                 htmlFor="tag"
                 className="mb-3 block text-base font-medium text-[#07074D]"
@@ -254,7 +254,7 @@ const Sell = () => {
                 required
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
               />
-            </div>
+            </div> */}
             {/* product condition  */}
             <div className="mb-5">
               <label
@@ -336,6 +336,7 @@ const Sell = () => {
               <textarea
                 name="description"
                 id="description"
+                required
                 cols="30"
                 rows="5"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
@@ -356,7 +357,7 @@ const Sell = () => {
               >
                 Your Instagram URL{" "}
                 <span className="text-sm font-normal">
-                  (for buyer communication)
+                  (optional)
                 </span>
               </label>
               <input
@@ -371,7 +372,7 @@ const Sell = () => {
                   });
                 }}
                 placeholder="https://www.instagram.com/anishsingh443"
-                required
+                
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
               />
             </div>
