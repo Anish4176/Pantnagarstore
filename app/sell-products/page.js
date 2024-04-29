@@ -1,4 +1,5 @@
 "use client";
+import Resizer from "react-image-file-resizer";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
@@ -6,7 +7,7 @@ import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
 import form from "@/public/form.svg";
 import spinner from "@/public/spinner.svg";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Sell = () => {
   const router = useRouter();
@@ -39,12 +40,28 @@ const Sell = () => {
     if (!file.type.includes("image")) {
       return alert("Please select an image file");
     }
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const result = reader.result;
-      setproduct_details({ ...product_details, productimage: result });
-    };
+    // Resize and compress the image
+    Resizer.imageFileResizer(
+      file, // the file from input
+      800, // max width in pixels
+      800, // max height in pixels
+      "JPEG", // compress format (JPEG, PNG, WEBP)
+      80, // quality (0 to 100, 100 being the best quality)
+      0, // rotation
+      (uri) => {
+        // URI is the base64 encoded string of the resized and compressed image
+        setproduct_details({ ...product_details, productimage: uri });
+      },
+      "base64", // output type
+      400, // max width of the original image
+      400 // max height of the original image
+    );
+    // const reader = new FileReader();
+    // reader.readAsDataURL(file);
+    // reader.onload = () => {
+    //   const result = reader.result;
+    //   setproduct_details({ ...product_details, productimage: result });
+    // };
   };
 
   //uploading in cloudinary
@@ -95,8 +112,8 @@ const Sell = () => {
             instagramHandle: product_details.instagramHandle,
           }),
         });
-        if(!response.ok){
-          toast.error('Something went wrong!', {
+        if (!response.ok) {
+          toast.error("Something went wrong!", {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -106,11 +123,11 @@ const Sell = () => {
             progress: undefined,
             theme: "light",
             transition: Bounce,
-            });
+          });
         }
 
         if (response.ok) {
-          toast.success('Product Published successfully!', {
+          toast.success("Product Published successfully!", {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -119,7 +136,7 @@ const Sell = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
+          });
           router.push("/");
         }
       }
@@ -167,7 +184,7 @@ const Sell = () => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
               />
             </div>
-            
+
             {/* product category  */}
             <div className="mb-5">
               <label
@@ -356,9 +373,7 @@ const Sell = () => {
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Your Instagram URL{" "}
-                <span className="text-sm font-normal">
-                  (optional)
-                </span>
+                <span className="text-sm font-normal">(optional)</span>
               </label>
               <input
                 type="text"
@@ -372,7 +387,6 @@ const Sell = () => {
                   });
                 }}
                 placeholder="https://www.instagram.com/anishsingh443"
-                
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6D28D9] focus:shadow-md"
               />
             </div>
@@ -383,16 +397,15 @@ const Sell = () => {
                 className="hover:shadow-form w-full rounded-md bg-[#6D28D9] py-3 px-8 text-center text-lg  font-medium text-white outline-none"
               >
                 {submitting ? (
-                  <div> 
-                  <Image
-                    src={spinner}
-                    alt="Publishing..."
-                    className="mx-auto "
-                    width={28}
-                    heigth={28}
-                    
-                  />
-                </div>
+                  <div>
+                    <Image
+                      src={spinner}
+                      alt="Publishing..."
+                      className="mx-auto "
+                      width={28}
+                      heigth={28}
+                    />
+                  </div>
                 ) : (
                   "Publish Product"
                 )}

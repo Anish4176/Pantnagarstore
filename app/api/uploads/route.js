@@ -20,7 +20,7 @@ export async function POST(req){
             unique_filename: false,
             overwrite: true,
             transformation:[
-                {width: 5000, height: 5000, crop: "limit", format: "auto", quality: "auto"}
+                {width: 1000, height: 700, crop: "limit", format: "auto", quality: "auto"}
             ]
 
           };
