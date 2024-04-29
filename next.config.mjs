@@ -1,15 +1,11 @@
-// Using ESM syntax if your project supports it
-import { NextConfig } from 'next';
-
-/** @type {NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["lh3.googleusercontent.com", "res.cloudinary.com"],
-  },
-  async headers() {
+    domains: ["lh3.googleusercontent.com","res.cloudinary.com"],
+    
+  },async headers() {
     return [
       {
-        // matching all API routes
         source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
@@ -19,8 +15,7 @@ const nextConfig = {
         ]
       }
     ]
-  }
+  },
 };
 
 export default nextConfig;
-
