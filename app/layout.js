@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/react';
+
 import {ToastContainer} from "@/components/Toast";
 import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
@@ -20,7 +20,7 @@ export const metadata = {
     "og:url": "http://pantnagarstore.com",
     "og:type": "website",
     "og:title": "PantnagarStore",
-    "og:image": {Home},
+    "og:image": "https://res.cloudinary.com/dharrmphd/image/upload/v1714488438/Screenshot_2024-04-24_164101_y8ghmz.png",
   }
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
        <Header/>
         {children}
         <ToastContainer/>
-        <Analytics />
+        
         <Footer/>     
       </NextAuthProvider>
         </body>

@@ -100,7 +100,7 @@ const Buy = () => {
             ) : (
               <p>Oops! No Products Found.</p>
             )
-          ) : totalproducts ? (
+          ) : Array.isArray(totalproducts) ? (
             totalproducts.map((value) => (
               <div
                 className="w-1/2 md:w-1/3 lg:w-1/4  px-1 md:px-2 flex items-center justify-center"

@@ -6,10 +6,11 @@ export async function GET(req,res){
       await ConnectToDatabase();
       const data=await Product.find().populate('sellar');
       
+      
       return NextResponse.json(data,{status: 200});
    }
    catch(e){
-      return NextResponse.json({message:e},{status: 500});
+      return NextResponse.json({message: e},{status: 500})
    }
    
 }
