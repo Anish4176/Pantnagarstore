@@ -13,15 +13,11 @@
       const handleproduct = async () => {
         try{
           const response = await fetch("/api/cards");     //fetching details of cards(products)
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
           const data = await response.json();  
-          console.log("hey",data);
           settotalproducts(data);
 
         }catch(e){
-          console.log("Failed to fetch the products",e.message);
+          console.log("Failed to fetch the products",e);
         }   
       };
       handleproduct();
