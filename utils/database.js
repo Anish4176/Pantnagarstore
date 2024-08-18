@@ -9,6 +9,7 @@ export async function ConnectToDatabase(){
     try{
         await mongoose.connect(process.env.MONGODB_URI,{
             dbName:"Pantnagar_Market",
+            bufferCommands: false,
         })
         isConnected = true;
         console.log('Mongodb is connected')
